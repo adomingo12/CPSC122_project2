@@ -1,15 +1,27 @@
-#include <iostream>
-#include <fstream>
-#include <cmath> // for pow()
+/*
+Name: Alicia Domingo
+Class: CPSC 122, Section 2
+Date: September 15, 2022
+Assignment: Project 2
+Description:
+        1. Takes as command line arguments two digit strings and an output file name 
+        2. Converts the digit strings to variables of type int using myAtoi described below
+        3. Multiplies the newly created int variables and writes their product to the output file name 
+*/
+
+#include <iostream> // for cout, endl
+#include <fstream> // for ofstream
 using namespace std;
 
+// Function Prototypes
 int myStrnLen(char str[]);
 int myAtoi(char str[]);
 
+// Main Functions
 int main(int argc, char* argv[])
 {
 
-    ofstream outFile;
+    ofstream outFile; // opens a ofstream called outFile
     outFile.open(argv[3]);
 
     outFile << myAtoi(argv[1]) * myAtoi(argv[2]) << endl;
@@ -18,6 +30,8 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+
+// Functions
 
 /*
 	Description: Computes the number of characters in a c-string excluding the null
@@ -30,7 +44,7 @@ int myStrnLen(char str[])
     int i = 0;
     while (str[i] != '\0')
     {
-        i++;
+        i++; // adds 1 to i
     }
 
     return i;
